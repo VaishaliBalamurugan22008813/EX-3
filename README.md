@@ -28,13 +28,13 @@ s=int(input("Enter Window Size : "))
 st=0
 i=0
 while True:
-while(i<len(l)):
-st+=s
-c.send(str(l[i:st]).encode())
-ack=c.recv(1024).decode()
-if ack:
-print(ack)
-i+=s
+ while(i<len(l)):
+  st+=s
+  c.send(str(l[i:st]).encode())
+  ack=c.recv(1024).decode()
+  if ack:
+  print(ack)
+  i+=s
 ```
 ```
 SERVER:
@@ -42,8 +42,8 @@ import socket
 s=socket.socket()
 s.connect(('localhost',8000))
 while True:
-print(s.recv(1024).decode())
-s.send("acknowledgement recived from the server".encode()
+ print(s.recv(1024).decode())
+ s.send("acknowledgement recived from the server".encode()
 ```
 OUTPUT :
 ![image](https://github.com/VaishaliBalamurugan22008813/EX-3/assets/119390134/ef73b968-2cc4-454c-980a-ccd29273d13a)
